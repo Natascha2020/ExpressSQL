@@ -26,7 +26,7 @@ Endpoint                             | Route
 GET (all posts from database)        | ("/posts")
 GET (the best 5 rates posts)         | ("/posts/highest-rating")
 POST (a new post to database)        | ("/posts")
-GET (filter a post via query string) | ("/post/?continent={continent}&limit={limit}"
+GET (filter a post via query string) | ("/posts/filter/?continent={continent}&limit={limit}"
 
 # Structure
 
