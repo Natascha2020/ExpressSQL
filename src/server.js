@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// endpoint to get all posts, possibility to filter posts via query parameters (continent and limit)
+// endpoint to get all posts, possibility to filter posts via query parameters (continent, limit and rating)
 app.get("/posts", postController.getAllPosts);
 
 // endpoint to get best 5 rated posts, possibility to filter posts via query parameters (continent)
