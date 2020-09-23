@@ -21,7 +21,7 @@ const checkInput = (continent, country, location, imageurl, rating) => {
 const postController = {
   // selecting all posts and sending data to client
   // retrieve query strings from query object on request object to filter through continent and limit and rating(=ASC||=DESC) if requested
-  // ensuring request returns filtered posts with lower or uppercase
+  // ensuring request with lower or uppercase gets response
   // rating=ASC|rating=DESC
   getAllPosts: (req, res) => {
     const { limit } = req.query;
