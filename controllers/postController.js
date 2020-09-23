@@ -20,11 +20,13 @@ const checkInput = (continent, country, location, imageurl, rating) => {
 
 const postController = {
   // selecting all posts and sending data to client
-  // retrieve query strings from query object on request object to filter through continent and limit if requested
+  // retrieve query strings from query object on request object to filter through continent and limit and rating(=ASC||=DESC) if requested
   // ensuring request returns filtered posts with lower or uppercase
+  // rating=ASC|rating=DESC
   getAllPosts: (req, res) => {
     const { limit } = req.query;
     let { continent } = req.query;
+    const { rating } = req.query;
 
     database
       .query(
@@ -37,6 +39,7 @@ const postController = {
               "'"
             : ""
         }
+        ${rating ? "ORDER BY rating " + rating : ""}
        ${limit ? "LIMIT " + limit : ""}`
       )
       .then((postData) => {
