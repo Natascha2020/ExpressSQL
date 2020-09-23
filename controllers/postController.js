@@ -1,13 +1,46 @@
 const database = require("../src/dbConfig");
 
+// preventing missing entry field (used in addPost-function)
+const checkInput = (continent, country, location, imageurl, rating) => {
+  if (
+    !continent ||
+    !country ||
+    !location ||
+    !imageurl ||
+    !rating ||
+    continent === "" ||
+    country === "" ||
+    location === "" ||
+    imageurl === "" ||
+    rating === ""
+  ) {
+    res.sendStatus(400).send("Please insert valid data");
+  }
+};
+
 const postController = {
-  // Getting whole data from table "posts"
+  // selecting all posts and sending data to client
+  // retrieve query strings from query object on request object to filter through continent and limit if requested
+  // ensuring request returns filtered posts with lower or uppercase
   getAllPosts: (req, res) => {
+    const { limit } = req.query;
+    let { continent } = req.query;
+
     database
-      .query("SELECT * FROM posts;")
+      .query(
+        `SELECT * FROM posts ${
+          continent
+            ? "WHERE continent='" +
+              (continent.includes("-")
+                ? continent.charAt(0).toUpperCase() + continent.slice(1).replace("-a", "-A")
+                : continent.charAt(0).toUpperCase() + continent.slice(1)) +
+              "'"
+            : ""
+        }
+       ${limit ? "LIMIT " + limit : ""}`
+      )
       .then((postData) => {
         res.json(postData.rows);
-        console.log("testB");
         res.end(postData);
       })
       .catch((error) => {
@@ -15,13 +48,25 @@ const postController = {
         res.sendStatus(404).send("Post not found");
       });
   },
-  getHighestRated: (req, res) => {
+
+  getHighestRating: (req, res) => {
     // selecting five highest rated posts, ordered by rating descending
+    // retrieve query string from query object on request object to filter through continents if requested
+    let { continent } = req.query;
     database
-      .query("SELECT * FROM posts ORDER BY rating DESC Limit 5;")
+      .query(
+        `SELECT * FROM posts ${
+          continent
+            ? "WHERE continent='" +
+              (continent.includes("-")
+                ? continent.charAt(0).toUpperCase() + continent.slice(1).replace("-a", "-A")
+                : continent.charAt(0).toUpperCase() + continent.slice(1)) +
+              "'"
+            : ""
+        } ORDER BY rating DESC Limit 5;`
+      )
       .then((filteredData) => {
         res.json(filteredData.rows);
-        console.log(filteredData.rows);
       })
       .catch((error) => {
         console.log(error);
@@ -32,21 +77,8 @@ const postController = {
   addPost: (req, res, next, goToNext) => {
     const { continent, country, location, imageurl, rating } = req.body;
     // preventing missing entry field
-    if (
-      !continent ||
-      !country ||
-      !location ||
-      !imageurl ||
-      !rating ||
-      continent === "" ||
-      country === "" ||
-      location === "" ||
-      imageurl === "" ||
-      rating === ""
-    ) {
-      res.sendStatus(400).send("Please insert valid data");
-      return;
-    }
+    checkInput(continent, country, location, imageurl, rating);
+
     database
       .query(
         `INSERT INTO posts (continent, country, location, imageurl, rating) VALUES ('${continent}','${country}','${location}','${imageurl}', ${rating}) RETURNING *;`
@@ -54,8 +86,6 @@ const postController = {
       .then((addedData) => {
         if (goToNext) {
           next();
-          res.json(addedData.rows);
-          console.log("TestA");
         } else {
           res.json(addedData.rows);
         }
@@ -66,13 +96,11 @@ const postController = {
       });
   },
 
-  filterPosts: (req, res) => {
-    // get query strings to filter through continents and give limit of selected posts
-    const { limit } = req.query;
-    const { continent } = req.query;
-
+  getId: (req, res) => {
+    // retrieve route parameter (extract id) from params object on request object
+    const { id } = req.params;
     database
-      .query(`SELECT * FROM posts ${continent ? "WHERE continent='" + continent + "';" : ""} ${limit ? "LIMIT " + limit + ";" : ""}`)
+      .query(`SELECT * FROM posts ${id ? "WHERE id='" + id + "';" : ""}`)
       .then((filteredData) => {
         res.json(filteredData.rows);
       })
