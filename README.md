@@ -23,14 +23,14 @@
 
 # Features
 
-| Endpoint                                   | Route                                             |
-| ------------------------------------------ | ------------------------------------------------- |
-| GET (all posts from database)              | ("/posts")                                        |
-| GET (filtered all posts via query params   | ("/posts/?continent={continent}&limit={limit}     |
-| GET (the best 5 rates posts)               | ("/posts/highest-rating") (default: limit=5 DESC) |
-| GET (filtered rated posts via query params | ("/posts/highest-rating/?continent={continent}    |
-| POST (new post to database)                | ("/posts")                                        |
-| GET (filtered post by id via route params) | ("/posts/:id"                                     |
+| Endpoint                                   | Route                                                         |
+| ------------------------------------------ | ------------------------------------------------------------- |
+| GET (all posts from database)              | ("/posts")                                                    |
+| GET (filtered all posts via query params   | ("/posts/?continent={continent}&limit={limit}&rating={rating} |
+| GET (the best 5 rates posts)               | ("/posts/highest-rating") (default: limit=5 DESC)             |
+| GET (filtered rated posts via query params | ("/posts/highest-rating/?continent={continent}                |
+| POST (new post to database)                | ("/posts")                                                    |
+| GET (filtered post by id via route params) | ("/posts/:id"                                                 |
 
 # Structure
 
