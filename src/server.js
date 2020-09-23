@@ -23,5 +23,5 @@ app.post("/posts", (req, res, next) => postController.addPost(req, res, next, tr
 // endpoint to get post with specific id via route parameter
 app.get("/posts/:id", postController.getId);
 
-// creating server running on port 30003
+// creating server running on port 3003
 app.listen(3003, () => console.log("Server is running on port 3003"));
