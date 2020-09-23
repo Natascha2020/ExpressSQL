@@ -40,6 +40,10 @@
 | dbConfig.js       | Configuration of database (ElephantSQL) |
 | postController.js | Controllers                             |
 
+# Structure
+
+<img src="./node-structure.png" title="Node structure" alt="Node structure" width="400">
+
 # Credits
 
 - Pictures are CC0 Creative Commons, attribution free, taken from:[Pixabay](https://pixabay.com/)
