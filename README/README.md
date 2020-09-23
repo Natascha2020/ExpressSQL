@@ -5,6 +5,7 @@
 - [Node.js](https://nodejs.org/)
 - GIT/GITHUB (code management)
 - [ElephantSQL](https://www.elephantsql.com/) (PostgreSQL database)
+- [Postman](https://www.postman.com/) (API testing)
 
 # How to run locally
 
@@ -22,12 +23,14 @@
 
 # Features
 
-| Endpoint                             | Route                                                 |
-| ------------------------------------ | ----------------------------------------------------- |
-| GET (all posts from database)        | ("/posts")                                            |
-| GET (the best 5 rates posts)         | ("/posts/highest-rating")                             |
-| POST (a new post to database)        | ("/posts")                                            |
-| GET (filter a post via query string) | ("/posts/filter/?continent={continent}&limit={limit}" |
+| Endpoint                                    | Route                                                 |
+| ------------------------------------------- | ----------------------------------------------------- |
+| GET (all posts from database)               | ("/posts")                                            |
+| GET (filtered all posts via query params    | ("/posts/?continent={continent}&limit={limit}         |
+| GET (the best 5 rates posts)                | ("/posts/highest-rating") (default: limit=5 DESC)     | 
+| GET (filtered rated posts via query params  | ("/posts/highest-rating/?continent={continent}        |
+| POST (new post to database)                 | ("/posts")                                            |
+| GET (filtered post by id via route params)  | ("/posts/:id"                                         |
 
 # Structure
 
@@ -36,6 +39,10 @@
 | server.js         | Server and endpoints                    |
 | dbConfig.js       | Configuration of database (ElephantSQL) |
 | postController.js | Controllers                             |
+
+# Structure
+
+<img src="./node-structure.png" title="Node structure" alt="Node structure" width="400">
 
 # Credits
 
