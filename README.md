@@ -42,7 +42,7 @@
 
 # Structure
 
-<img src="./node-structure.png" title="Node structure" alt="Node structure" width="400">
+<img src="./src/images/nodeStructure.png" title="Node structure" alt="Node structure" width="400">
 
 # Credits
 
