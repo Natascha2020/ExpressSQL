@@ -38,7 +38,8 @@
 | ----------------- | --------------------------------------- |
 | server.js         | Server and endpoints                    |
 | dbConfig.js       | Configuration of database (ElephantSQL) |
-| postController.js | Controllers                             |
+| postController.js | Controllers for post endpoints          |
+| postRoutes.js     | Configuration of post routes            |
 
 # Structure
 
