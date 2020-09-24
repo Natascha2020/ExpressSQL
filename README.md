@@ -31,6 +31,8 @@
 | GET (filtered rated posts via query params | ("/posts/highest-rating/?continent={continent}                |
 | POST (new post to database)                | ("/posts")                                                    |
 | GET (filtered post by id via route params) | ("/posts/:id"                                                 |
+| PUT (update post by id via route params)   | ("/posts/:id"                                                 |
+| DELETE (DELTE post by id via route params) | ("/posts/:id"                                                 |
 
 # Structure
 
