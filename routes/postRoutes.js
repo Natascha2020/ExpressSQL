@@ -14,5 +14,9 @@ router.post("/", (req, res, next) => postController.addPost(req, res, next, true
 
 // endpoint to get post with specific id via route parameter
 router.get("/:id", postController.getId);
+// endpoint to delete post with specific id via route parameter
+router.delete("/:id", postController.deleteId);
+// endpoint to update post with specific id via route parameter
+router.put("/:id", postController.updateId);
 
 module.exports = router;
