@@ -47,7 +47,7 @@ const postController = {
         res.end(postData);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
         res.sendStatus(404).send("Post not found");
       });
   },
@@ -94,7 +94,7 @@ const postController = {
         }
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
         res.sendStatus(500).send("Internal Server Error");
       });
   },
@@ -108,7 +108,7 @@ const postController = {
         res.json(filteredData.rows);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
         res.sendStatus(400).send("Please query valid data");
       });
   },

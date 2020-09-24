@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const postController = require("../controllers/postController");
+const postRoutes = require("../routes/postRoutes");
 
 const app = express();
 
@@ -11,17 +11,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// endpoint to get all posts, possibility to filter posts via query parameters (continent, limit and rating)
-app.get("/posts", postController.getAllPosts);
-
-// endpoint to get best 5 rated posts, possibility to filter posts via query parameters (continent)
-app.get("/posts/highest-rating", postController.getHighestRating);
-
-// endpoint to create a post and receive updated data as response
-app.post("/posts", (req, res, next) => postController.addPost(req, res, next, true), postController.getAllPosts);
-
-// endpoint to get post with specific id via route parameter
-app.get("/posts/:id", postController.getId);
+app.use("/posts", postRoutes);
 
 // creating server running on port 3003
 app.listen(3003, () => console.log("Server is running on port 3003"));
