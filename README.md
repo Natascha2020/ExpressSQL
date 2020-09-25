@@ -32,10 +32,10 @@
 | POST (new post to database)                  | ("/posts")                                                    |
 | GET (filtered post by id via route params)   | ("/posts/:id"                                                 |
 | PUT (update post by id via route params)     | ("/posts/:id"                                                 |
-| DELETE (DELTE post by id via route params)   | ("/posts/:id"                                                 |
+| DELETE (DELETE post by id via route params)   | ("/posts/:id"                                                 |
 | GET (filtered post by id via route params)   | ("/admin/:id"                                                 |
 | PUT (update imageurl by id via route params) | ("/admin/:id"                                                 |
-| DELETE (DELTE post by id via route params)   | ("/admin/:id"                                                 |
+| DELETE (DELETE post by id via route params)   | ("/admin/:id"                                                 |
 
 # Structure
 
