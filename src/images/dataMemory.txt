@@ -1,0 +1,11 @@
+Insert into posts (continent, country, location, imageurl, rating) VALUES
+('Asia', 'Thailand', 'Khao Sok National Park', 'https://cdn.pixabay.com/photo/2016/10/15/14/10/thailand-1742563_1280.jpg', 4),
+('Europe', 'Germany', 'Speicherstadt', 'https://cdn.pixabay.com/photo/2018/11/29/21/19/hamburg-3846525__480.jpg', 3),
+('North-America', 'San Francisco', 'Golden Gate Bridge', 'https://cdn.pixabay.com/photo/2017/01/05/21/57/the-golden-gate-bridge-1956459_1280.jpg', 3),
+('Asia', 'Yangon', 'Shwedagon Pagoda', 'https://cdn.pixabay.com/photo/2016/10/11/11/31/temple-1731194__480.jpg', 5),
+('Antarctica', 'Antarctica', 'Aurora', 'https://cdn.pixabay.com/photo/2016/02/09/19/57/aurora-1190254__480.jpg', 4),
+('Europe', 'Spain', 'Alhambra', 'https://cdn.pixabay.com/photo/2015/10/01/13/52/alhambra-967024_1280.jpg', 5),
+('North-America', 'Arizona', 'Grand Canyon', 'https://cdn.pixabay.com/photo/2016/12/15/07/54/horseshoe-bend-1908283__480.jpg', 4),
+('Africa', 'Zimbabwe', 'Victory Falls', 'https://cdn.pixabay.com/photo/2017/11/18/17/07/africa-2960532__480.jpg', 5),
+('South-America', 'Bolivia', 'Salar de Uyuni', 'https://cdn.pixabay.com/photo/2019/11/18/07/03/salar-de-uyuni-4634087__480.jpg' ,5),
+('South-America', 'Peru', 'Machu Picchu', 'https://cdn.pixabay.com/photo/2014/11/21/04/11/machu-pichu-540145__480.jpg' ,5)
