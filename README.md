@@ -48,7 +48,6 @@
 | postController.js | Controllers for post endpoints          |
 | postRoutes.js     | Configuration of post routes            |
 | server.js         | Server and endpoints (!main file)       |
-| dbConfig.js       | Configuration of database (ElephantSQL) |
 
 
 # Front-end
