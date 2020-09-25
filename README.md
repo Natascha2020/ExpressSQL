@@ -41,19 +41,20 @@
 
 | File              | Description                             |
 | ----------------- | --------------------------------------- |
-| server.js         | Server and endpoints                    |
+| adminRoutes.js    | Configuration of admin routes           |
+| dataMemory.txt    | Data storage for reseting database      |
 | dbConfig.js       | Configuration of database (ElephantSQL) |
+| paramsCheck.js    | Helper functions for client requests    |
 | postController.js | Controllers for post endpoints          |
 | postRoutes.js     | Configuration of post routes            |
-| AdminRoutes.js    | Configuration of admin routes           |
+| server.js         | Server and endpoints (!main file)       |
+| dbConfig.js       | Configuration of database (ElephantSQL) |
 
-# Front-End-connection
 
-[React-App:ExpressSQLApp](https://github.com/Natascha2020/ExpressSQLApp.git)
+# Front-end
 
-# Structure
+[ExpressSQLApp](https://github.com/Natascha2020/ExpressSQLApp.git) (default front-end react-app)
 
-<img src="./src/images/nodeStructure.png" title="Node structure" alt="Node structure" width="400">
 
 # Credits
 
