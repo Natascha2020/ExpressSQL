@@ -23,16 +23,19 @@
 
 # Features
 
-| Endpoint                                   | Route                                                         |
-| ------------------------------------------ | ------------------------------------------------------------- |
-| GET (all posts from database)              | ("/posts")                                                    |
-| GET (filtered all posts via query params   | ("/posts/?continent={continent}&limit={limit}&rating={rating} |
-| GET (the best 5 rates posts)               | ("/posts/highest-rating") (default: limit=5 DESC)             |
-| GET (filtered rated posts via query params | ("/posts/highest-rating/?continent={continent}                |
-| POST (new post to database)                | ("/posts")                                                    |
-| GET (filtered post by id via route params) | ("/posts/:id"                                                 |
-| PUT (update post by id via route params)   | ("/posts/:id"                                                 |
-| DELETE (DELTE post by id via route params) | ("/posts/:id"                                                 |
+| Endpoint                                     | Route                                                         |
+| -------------------------------------------- | ------------------------------------------------------------- |
+| GET (all posts from database)                | ("/posts")                                                    |
+| GET (filtered all posts via query params     | ("/posts/?continent={continent}&limit={limit}&rating={rating} |
+| GET (the best 5 rates posts)                 | ("/posts/highest-rating") (default: limit=5 DESC)             |
+| GET (filtered rated posts via query params   | ("/posts/highest-rating/?continent={continent}                |
+| POST (new post to database)                  | ("/posts")                                                    |
+| GET (filtered post by id via route params)   | ("/posts/:id"                                                 |
+| PUT (update post by id via route params)     | ("/posts/:id"                                                 |
+| DELETE (DELETE post by id via route params)  | ("/posts/:id"                                                 |
+| GET (filtered post by id via route params)   | ("/admin/:id"                                                 |
+| PUT (update imageurl by id via route params) | ("/admin/:id"                                                 |
+| DELETE (DELETE post by id via route params)  | ("/admin/:id"                                                 |
 
 # Structure
 
@@ -42,6 +45,11 @@
 | dbConfig.js       | Configuration of database (ElephantSQL) |
 | postController.js | Controllers for post endpoints          |
 | postRoutes.js     | Configuration of post routes            |
+| AdminRoutes.js    | Configuration of admin routes           |
+
+# Front-End-connection
+
+[React-App:ExpressSQLApp](https://github.com/Natascha2020/ExpressSQLApp.git)
 
 # Structure
 
