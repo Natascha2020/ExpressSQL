@@ -49,6 +49,10 @@
 | postRoutes.js     | Configuration of post routes            |
 | server.js         | Server and endpoints (!main file)       |
 
+# Structure
+
+<img src="./src/images/nodeStructure.png" title="Node structure" alt="Node structure" width="400">
+
 
 # Front-end
 
