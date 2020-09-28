@@ -2,10 +2,10 @@ require("dotenv").config();
 
 const express = require("express");
 const bodyParser = require("body-parser");
-
-const postRoutes = require("../routes/postRoutes");
-const adminRoutes = require("../routes/adminRoutes");
 const cors = require("cors");
+
+const postRoutes = require("./routes/postRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
 

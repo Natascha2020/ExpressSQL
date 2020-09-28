@@ -1,4 +1,4 @@
-const database = require("../src/dbConfig");
+const database = require("../dbConfig");
 const paramsCheck = require("../helpers/paramsCheck");
 
 const postController = {
@@ -27,7 +27,7 @@ const postController = {
       res.json(rows);
     } catch (error) {
       console.error(error);
-      res.sendStatus(404).send("Post not found");
+      res.sendStatus(404);
     }
   },
 
@@ -50,7 +50,7 @@ const postController = {
       res.json(rows);
     } catch (error) {
       console.error(error);
-      res.sendStatus(404).send("Post not found");
+      res.sendStatus(404);
     }
   },
 
@@ -74,7 +74,7 @@ const postController = {
       }
     } catch (error) {
       console.error(error);
-      res.sendStatus(500).send("Internal Server Error");
+      res.sendStatus(500);
     }
   },
 
@@ -120,7 +120,7 @@ const postController = {
       }
     } catch (error) {
       console.error(error);
-      res.sendStatus(500).send("Internal Server Error");
+      res.sendStatus(500);
     }
   },
 
@@ -135,7 +135,7 @@ const postController = {
       res.sendStatus(200);
     } catch (error) {
       console.error(error);
-      res.sendStatus(500).send("Internal Server Error");
+      res.sendStatus(500);
     }
   },
 };

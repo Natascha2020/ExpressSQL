@@ -1,4 +1,4 @@
-const database = require("../src/dbConfig");
+const database = require("../dbConfig");
 
 const adminController = {
   getAllPosts: async (req, res) => {
@@ -70,7 +70,7 @@ const adminController = {
       res.sendStatus(200);
     } catch (error) {
       console.error(error);
-      res.sendStatus(500).send("Internal Server Error");
+      res.sendStatus(500);
     }
   },
 };
